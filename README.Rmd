@@ -1,5 +1,7 @@
 ---
 output: github_document
+bibliography: biblio.bib
+csl: apa.csl
 editor_options: 
   chunk_output_type: console
 ---
@@ -14,79 +16,140 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Unidad 1. Epistemología, conceptos, bases geológicas e introducción a los procesos de la superficie terrestre
-
-* Movimiento estaciones GNSS de RD
-* Temperatura de derretimiento según presión por profundidad
-* Porcentaje de rocas por provincias
-
-La presentación correspondiente a este tema se encuentra alojada [aquí](https://geomorfologia-master.github.io/tema-1-epistemologia-geologia-intro-procesos).
+# Léeme
 
 Dentro de las opciones de `knitr`, en el encabezado de este archivo, es probable que encuentres el argumento `eval = F`. Antes de tejer debes cambiarlo a `eval = T`, para que evalúe los bloques de código según tus cambios.
 
-## Asignaciones a cada estudiante
 
-### Estación GNSS asignada
+# Asignaciones a cada estudiante
 
-```{r}
- # abreviatura      estación GNSS
- #       anala               SPED
- #       carol               LVEG
- #       danie               BARA
-```
-
-
-### Espesor de hielo asignado
+## Corte asignado para el ejercicio *Datación relativa usando la elevación topográfica y la edad de las rocas*
 
 ```{r}
- # abreviatura    espesor de hielo (km)
- #       anala                        3
- #       carol                        8
- #       danie                       14
+ # abreviatura         corte                         ruta
+ #       anala        corte2       data/cortes/corte2.kml
+ #       carol        corte3       data/cortes/corte3.kml
+ #       danie        corte1       data/cortes/corte1.kml
 ```
 
-
-### Provincia asignada
+## Isótopo asignado para los ejercicios *Datación absoluta a partir del porcentaje isotópico remanente* y *Vida media y semivida (periodo de semidesintegración) isotópica*
 
 ```{r}
- # abreviatura     código de provincia
- #       anala                      03
- #       carol                      12
- #       danie                      24
+ # abreviatura      istótopo
+ #       anala    Carbono 14  
+ #       carol    Berilio 10
+ #       danie   Aluminio 26
 ```
 
-## Movimiento debido a la tectónica de placas.
-
-Calcula el movimiento E-O y N-S de tu estación GNSS para todo el periodo del cual se disponga de datos, así como un promedio diario y un promedio anual. Hay muchas formas de estimar una tasa. Te sugiero el siguiente método "sencillo", que es a la vez poco potente:
-
-Localiza tu estación asignada en la carpeta `data/estaciones-gnss`. Genera dos series temporales, una para E-O y otra para N-S, utilizando la función `ts` (pertenece al paquete `stats`, que se carga por defecto con R). De cada una, obtén una serie temporal suavizada, calculándola a partir de la media móvil de la serie original para un orden de, por ejemplo, 90 días (puedes probar otros órdenes). Para ello, utiliza la función `ma` del paquete `forecast`. Opcionalmente, grafica la serie suavizada con la función `plot`. Identifica el valor máximo de la serie suavizada, el cual corresponde al __movimiento durante todo el periodo__. Dicho valor, divídelo entre el número de días de la serie (función `length` para obtener el número de días), con el cual obtendrás el __movimiento diario promedio__. Multiplica por 365.25 el movimiento diario para obtener el __movimiento anual promedio__.
-
-## Temperatura de fusión del hielo a presión mayor que la atmosférica
-
-Imagina que tienes un bloque de hielo con el espesor asignado. Utilizando esta razón...
-
-*dT/dP = -0.00074 °K/100 kPa*
-
-...determina a qué temperatura se funde el hielo en la parte inferior de tu bloque.
-
-* Datos útiles:
-    * Densidad del hielo ~ 900 kg•m<sup>-3</sup>
-    * Aceleración de la gravedad ~ 9.81 m•s<sup>-2</sup>
-    * 1 kg•m•s<sup>-2</sup> = N
-    * 1 N•m<sup>-2</sup> = 1 Pa
-    * Presión atmosférica ~ 101 kPa
-    * Temperatura de fusión del hielo a presión atmosférica ~ 273.15 °K
-
-## Porcentaje de rocas por provincias
-
-En las carpetas `data/rocas` y `data/division-RD` encontrarás GeoPackages con la división provincial y las rocas aflorantes del país, respectivamente. 
+## Datos de cuencas asginadas para el ejercicio *Tasa de denudación*
 
 ```{r}
-library(...)
-source('estadistica-zonal-objetos-sf.R')
-prov <- ...
-miprov <- ...[ ... , ]
-lito <- ...
-zstatsf(..., ..., grpx = ..., grpy = ...)
+# abrev  tamaño (km cuad.)  densidad rocas (g por cm cúbicos)  tasa transporte sed (kg/año)
+# anala             478.71                               2.69                103,435,298.45
+# carol             532.13                               2.45                148,569,784.32
+# danie             296.46                               3.02                 87,489,625.26
 ```
 
+## Muestras de clastos asignadas para el ejercicio *Tamaños de clastos de tipos de rocas comunes en distintos tramos de río*
+
+```{r}
+# abreviatura            codigo_lugar
+# anala             GJRC_02 y LPRO_03
+# carol             RBAH_01 y LPRO_01
+# danie             AVAV_01 y LPRO_02
+```
+
+# Unidad 2. Tiempo en geomorfología
+
+* Datación relativa usando la elevación topográfica y la edad de las rocas.
+* Datación absoluta a partir del porcentaje isotópico remanente.
+* Vida media y semivida (periodo de semidesintegración) isotópica.
+
+Para fines de referencia, la presentación correspondiente a este tema se encuentra alojada [aquí](https://drive.google.com/file/d/1I7kNCS3oj5NpXsinVGaIZAezsZCAyRqI/view).
+
+Adicionalmente, consulta el capítulo 6 de @anderson2010geomorphology
+
+## EJERCICIO 1: Datación relativa usando la elevación topográfica y la edad de las rocas
+
+Propón una secuencia evolutiva del relieve intersectado por tu corte. Indica edades utilizando períodos del mapa geológico.
+
+> ¿Sirve de algo que yo escriba aquí *tips*=plepla, o mejor explico de viva voz? Fijo que será esto último.
+
+En cualquier caso, tienes dos alternativas:
+
+* Utilizado GoogleEarth. Descarga el mapa geológico alojado [aquí](https://drive.google.com/open?id=1iLYmhiFq2cowuelKqAsI506Z2AYhBxFJ) y cárgalo en GoogleEarth. Posteriormente, descarga tu corte asignado (la ruta se encuentra arriba) y colócalo encima del mapa geológico. En GoogleEarth Tienes la ventaja de que lo puedes visualizar en 3D con relativa facilidad.
+
+* Utilizando QGIS. Descarga el mapa geológico alojado [aquí](https://drive.google.com/open?id=1NKyZjxzIedFq6Lq0bx-2YrGq5PtMh_r7), cárgalo en QGIS. Descarga tu corte (la ruta se encuentra arriba) y colócalo encima del mapa geológico.
+
+*Tu párrafo interpretativo debajo de esta línea*
+
+
+
+## EJERCICIO 2: Datación absoluta a partir del porcentaje isotópico remanente
+
+Enviaste una muestra al laboratorio, y te reportaron que el porcentaje remanente de tu isótopo asignado es 36%. Usa la fórmula N<sub>0</sub>=Ne<sup>-&lambda;t</sup> y la tabla 6.1 de @anderson2010geomorphology.
+
+¿Qué edad aproximada tiene la muestra? Interpreta el resultado.
+
+```{r}
+
+```
+
+*Tu párrafo interpretativo debajo de esta línea*
+
+
+
+## EJERCICIO 3: Vida media y semivida (periodo de semidesintegración) isotópica
+
+Calcula e interpreta, según lo que conoces sobre los métodos de datación, la vida media y la semivida de tu isótopo asignado. La tabla 6.1 de @anderson2010geomorphology te muestra el valor esperado, pero debes demostrar aquí cómo calcularlo.
+
+```{r}
+
+```
+
+*Tu párrafo interpretativo debajo de esta línea*
+
+
+
+# Unidad 3. Meteorización y formas resultantes
+
+* Tasa de denudación.
+* Tamaños de clastos por tipo de roca.
+
+Para fines de referencia, la presentación correspondiente a este tema se encuentra alojada [aquí](https://github.com/geomorfologia-master/tema-3-meteorizacion-y-formas-resultantes/blob/gh-pages/meteorizacion_y_formas_resultantes.pdf).
+
+## EJERCICIO 4: Tasa de denudación
+
+Cálcula la tasa de denudación anual y la denudación al cabo de 30 años, de tu cuenca asignada (ver arriba). Realiza tu cálculo utilizando la fórmula de la tasa de denudación (*Td*):
+
+*Td = (TTS/A)/&rho;*
+
+donde *TTS* es la tasa de transporte de sedimentos, *A* es el área de la cuenca y *&rho;* es la densidad promedio de las rocas de la cuenca.
+
+```{r}
+
+```
+
+Interpreta tu resultado comparando con otros casos o respondiendo a preguntas tales como "Si la *TTS*, *A* o *&rho;* fuesen menores o mayores, ¿sería mayor o menor la *Td*?
+
+IMPORTANTE: no olvides transformar las unidades a un sistema común.
+
+*Tu párrafo interpretativo debajo de esta línea*
+
+
+
+
+## EJERCICIO 5: Tamaños de clastos de tipos de rocas comunes en distintos tramos de río
+
+Como indicador indirecto del potencial erosivo, utiliza los datos de muestras de clastos tomadas en la cuenca del río Ocoa, que se encuentran alojados en `data/clastos/clastos.csv`. Compararás el tamaño de los clastos de los tipos de rocas que sean comunes entre tus dos muestras asignadas (filtra según el campo `codigo_lugar`). Cada muestra contiene, aproximadamente, 100 clastos de distintos tipos de litologías medidos en tres ejes: largo, ancho y espesor. Una de tus muestras representa el tramo alto del río, la otra el tramo bajo; en el próximo párrafo te indico cómo cargar la posición de los puntos de muestras. Compara si los tamaños en el eje de anchura (campo `ancho_en_mm`) difieren significativamente entre la muestra de tramo alto y la de tramo bajo. Para ello, primero determina cuántos clastos de cada roca hay por cada muestra, luego obtén la media de la anchura, y evalúa dónde dicha media es mayor o menor, si en la muestra de tramo alto o en la de tramo bajo. Utiliza una prueba estadística para determinar si se trata de una diferencia significativa (eso de la significancia, ¿qué es? ¿sirve para algo aún?) Interpreta el resultado.
+
+Para que puedas visualizar las posiciones de las muestras, descarga el archivo KML `data/clastos/posiciones_muestras.kml`, el cual contiene los puntos de muestras. Cárgalo en QGIS o en GoogleEarth. Dado que la densidad de puntos por unidad de área puede ser muy grande en determinadas zonas, debes acercarte mucho para visualizar tus puntos asignados.
+
+```{r}
+
+```
+
+*Tu párrafo interpretativo debajo de esta línea*
+
+
+# Referencias
