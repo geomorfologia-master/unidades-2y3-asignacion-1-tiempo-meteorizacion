@@ -8,7 +8,7 @@ cambios.
 
 # Asignaciones a cada estudiante
 
-## Corte asignado para el ejercicio *Datación relativa usando la elevación topográfica y la edad de las rocas*
+## Corte asignado para el ejercicio 1 *Datación relativa usando la elevación topográfica y la edad de las rocas*
 
 ``` r
  # abreviatura         corte                         ruta
@@ -17,7 +17,7 @@ cambios.
  #       danie        corte1       data/cortes/corte1.kml
 ```
 
-## Isótopo asignado para los ejercicios *Datación absoluta a partir del porcentaje isotópico remanente* y *Vida media y semivida (periodo de semidesintegración) isotópica*
+## Isótopo asignado para el ejercicio 2 *Datación absoluta a partir del porcentaje isotópico remanente* y el ejercicio 3 *Vida media y semivida (periodo de semidesintegración) isotópica*
 
 ``` r
  # abreviatura      istótopo
@@ -26,7 +26,7 @@ cambios.
  #       danie   Aluminio 26
 ```
 
-## Datos de cuencas asginadas para el ejercicio *Tasa de denudación*
+## Datos de cuencas asginadas para el ejercicio 4 *Tasa de denudación*
 
 ``` r
 # abrev  tamaño (km cuad.)  densidad rocas (g por cm cúbicos)  tasa transporte sed (kg/año)
@@ -35,7 +35,7 @@ cambios.
 # danie             296.46                               3.02                 87,489,625.26
 ```
 
-## Muestras de clastos asignadas para el ejercicio *Tamaños de clastos de tipos de rocas comunes en distintos tramos de río*
+## Muestras de clastos asignadas para el ejercicio 5 *Tamaños de clastos de tipos de rocas comunes en distintos tramos de río*
 
 ``` r
 # abreviatura            codigo_lugar
@@ -78,7 +78,10 @@ En cualquier caso, tienes dos alternativas:
   - Utilizando QGIS. Descarga el mapa geológico alojado
     [aquí](https://drive.google.com/open?id=1NKyZjxzIedFq6Lq0bx-2YrGq5PtMh_r7),
     cárgalo en QGIS. Descarga tu corte (la ruta se encuentra arriba) y
-    colócalo encima del mapa geológico.
+    colócalo encima del mapa geológico. Para visualizar elevaciones, te
+    recomiendo cargar el OpenTopoMap desde el plugin QuickMapServices de
+    QGIS. Alternativamente, puedes descargar el DEM SRTM 90-m de la isla
+    desde el [EarthExplorer](https://earthexplorer.usgs.gov/)
 
 *Tu párrafo interpretativo debajo de esta
 línea*
